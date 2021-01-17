@@ -1,25 +1,71 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigation from './components/NavBar/NavBar'
+import Login from './components/Login/Login'
+import Orders from './components/Orders/Orders'
+import Products from './components/Products/Products'
+import Messages from './components/Messages/Messages'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      user: localStorage.getItem('admin') || "",
+      route: ''
+    };
+  }
+
+  componentDidMount() {
+    if (this.state.user) {
+      this.setState({ route: 'products' })
+    } else {
+      this.setState({ route: 'login' })
+    }
+  }
+
+  loadUser = (user) => {
+    this.setState({ user: user })
+    localStorage.setItem('admin', user)
+
+  }
+
+  signOut = () => {
+    this.setState({ user: "", route: 'login' })
+    localStorage.removeItem('admin');
+  }
+
+  onRouteChange = (route) => {
+    this.setState({ route: route });
+  }
+
+  render() {
+
+    let display;
+    let nav;
+
+    if (this.state.route === 'login') {
+      display = <Login onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
+    } else if (this.state.route === 'products') {
+      nav = <Navigation onRouteChange={this.onRouteChange} signOut={this.signOut} />
+      display = <Products />
+    } else if (this.state.route === 'orders') {
+      nav = <Navigation onRouteChange={this.onRouteChange} signOut={this.signOut} />
+      display = <Orders />
+    } else if (this.state.route === 'messages') {
+      nav = <Navigation onRouteChange={this.onRouteChange} signOut={this.signOut} />
+      display = <Messages />
+    }
+
+    return (
+      <div className="App">
+        {nav}
+        {display}
+      </div>
+    );
+  }
 }
 
 export default App;
