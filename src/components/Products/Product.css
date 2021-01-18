@@ -1,0 +1,23 @@
+.center_divP{
+    margin-left: 10em;
+    padding-top: 4em;
+    
+}
+
+.imgs {
+    object-fit: scale-down;
+    width: 17rem;
+    height: 17rem;
+  }
+
+.addButton{
+margin-top: 4em;
+margin-right: 40em;
+}
+
+
+.centerForm{
+    margin: 0 auto;
+    width:40%;
+    padding-top: 5em;
+}

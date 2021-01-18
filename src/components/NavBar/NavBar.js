@@ -43,7 +43,7 @@ class NavBar extends React.Component {
     render() {
 
         return (
-            <Navbar expand="lg" bg="dark" variant="dark">
+            <Navbar expand="lg" bg="dark" variant="dark" fixed="top">
                 <Navbar.Brand>adminPanel</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

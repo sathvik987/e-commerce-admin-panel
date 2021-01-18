@@ -5,6 +5,7 @@ import Navigation from './components/NavBar/NavBar'
 import Login from './components/Login/Login'
 import Orders from './components/Orders/Orders'
 import Products from './components/Products/Products'
+import AddProducts from './components/Products/AddProduct'
 import Messages from './components/Messages/Messages'
 
 
@@ -50,13 +51,16 @@ class App extends Component {
       display = <Login onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
     } else if (this.state.route === 'products') {
       nav = <Navigation onRouteChange={this.onRouteChange} signOut={this.signOut} />
-      display = <Products />
+      display = <Products onRouteChange={this.onRouteChange} />
     } else if (this.state.route === 'orders') {
       nav = <Navigation onRouteChange={this.onRouteChange} signOut={this.signOut} />
       display = <Orders />
     } else if (this.state.route === 'messages') {
       nav = <Navigation onRouteChange={this.onRouteChange} signOut={this.signOut} />
       display = <Messages />
+    } else if (this.state.route === 'addproducts') {
+      nav = <Navigation onRouteChange={this.onRouteChange} signOut={this.signOut} />
+      display = <AddProducts onRouteChange={this.onRouteChange} />
     }
 
     return (
