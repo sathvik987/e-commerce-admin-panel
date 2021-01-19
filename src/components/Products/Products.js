@@ -47,19 +47,21 @@ class Products extends React.Component {
                 </div>
 
                 <div className='center_divP'>
-                    {
-                        this.state.products.map((item) => {
+                    <div className='grid-wrapper'>
+                        {
+                            this.state.products.map((item) => {
 
-                            return (<Product key={item.productname}
-                                productname={item.productname}
-                                description={item.description}
-                                price={item.price}
-                                image={item.image}
-                                refresh={this.refresh}
-                            />)
+                                return (<Product key={item.productname}
+                                    productname={item.productname}
+                                    description={item.description}
+                                    price={item.price}
+                                    image={item.image}
+                                    refresh={this.refresh}
+                                />)
 
-                        })
-                    }
+                            })
+                        }
+                    </div>
 
                 </div>
 
