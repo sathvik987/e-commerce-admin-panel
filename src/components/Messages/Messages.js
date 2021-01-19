@@ -13,7 +13,7 @@ class Messages extends React.Component {
 
 
     componentDidMount() {
-        fetch('http://localhost:9000/contacts/messages')
+        fetch('https://arcane-sea-44247.herokuapp.com/contacts/messages')
             .then(response => response.json())
             .then(items => {
                 items.sort((a, b) => (a.date < b.date) ? 1 : ((b.date < a.date) ? -1 : 0));
@@ -23,7 +23,7 @@ class Messages extends React.Component {
     }
 
     refresh = () => {
-        fetch('http://localhost:9000/contacts/messages')
+        fetch('https://arcane-sea-44247.herokuapp.com/contacts/messages')
             .then(response => response.json())
             .then(items => {
                 items.sort((a, b) => (a.date < b.date) ? 1 : ((b.date < a.date) ? -1 : 0));

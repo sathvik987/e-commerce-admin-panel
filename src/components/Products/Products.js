@@ -13,14 +13,14 @@ class Products extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:9000/products/getproducts')
+        fetch('https://arcane-sea-44247.herokuapp.com/products/getproducts')
             .then(response => response.json())
             .then(items => this.setState({ products: items }));
 
     }
 
     refresh = () => {
-        fetch('http://localhost:9000/products/getproducts')
+        fetch('https://arcane-sea-44247.herokuapp.com/products/getproducts')
             .then(response => response.json())
             .then(items => this.setState({ products: items }));
 

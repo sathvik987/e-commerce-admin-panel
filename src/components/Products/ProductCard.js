@@ -9,7 +9,7 @@ class ProductCard extends React.Component {
     deleteProduct = () => {
         let result = window.confirm('You sure.?');
         if (result) {
-            fetch('http://localhost:9000/products/deleteproduct', {
+            fetch('https://arcane-sea-44247.herokuapp.com/products/deleteproduct', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -32,7 +32,7 @@ class ProductCard extends React.Component {
         return (
             <div>
                 <Card style={{ width: '18rem' }} >
-                    <Card.Img variant="top" src={"http://localhost:9000/" + this.props.image} className="imgs" />
+                    <Card.Img variant="top" src={"https://arcane-sea-44247.herokuapp.com/" + this.props.image} className="imgs" />
                     <Card.Body>
                         <Card.Title>{this.props.productname}</Card.Title>
                         <Card.Text style={{ fontSize: "13px" }}>

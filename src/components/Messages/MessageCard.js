@@ -8,7 +8,7 @@ class MessageCard extends React.Component {
 
     done = () => {
 
-        fetch('http://localhost:9000/contacts/messagestatus', {
+        fetch('https://arcane-sea-44247.herokuapp.com/contacts/messagestatus', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

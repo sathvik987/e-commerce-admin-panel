@@ -26,7 +26,7 @@ class Login extends React.Component {
 
     onSubmit = () => {
         if (this.state.password && this.state.userName) {
-            fetch('http://localhost:9000/users/adminLogin', {
+            fetch('https://arcane-sea-44247.herokuapp.com/users/adminLogin', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

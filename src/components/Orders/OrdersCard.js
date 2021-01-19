@@ -8,7 +8,7 @@ class OrdersCard extends React.Component {
 
     cancelOrder = () => {
 
-        fetch('http://localhost:9000/orders/orderstatus', {
+        fetch('https://arcane-sea-44247.herokuapp.com/orders/orderstatus', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -27,7 +27,7 @@ class OrdersCard extends React.Component {
 
     shipOrder = () => {
 
-        fetch('http://localhost:9000/orders/orderstatus', {
+        fetch('https://arcane-sea-44247.herokuapp.com/orders/orderstatus', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -46,7 +46,7 @@ class OrdersCard extends React.Component {
 
     completedOrder = () => {
 
-        fetch('http://localhost:9000/orders/orderstatus', {
+        fetch('https://arcane-sea-44247.herokuapp.com/orders/orderstatus', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

@@ -51,7 +51,7 @@ class AddProducts extends React.Component {
             formdata.append('description', this.state.description)
             formdata.append('type', this.state.type)
             formdata.append('image', this.state.image)
-            fetch('http://localhost:9000/products/addproduct', {
+            fetch('https://arcane-sea-44247.herokuapp.com/products/addproduct', {
                 method: 'post',
                 body: formdata
             }).then(res => res.json())
